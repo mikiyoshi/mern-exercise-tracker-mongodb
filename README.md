@@ -36,6 +36,12 @@ npm install -g nodemon
 nodemon server
 ```
 
+- Add `models` and `routes`
+  - tested by `postman` using by Desktop app
+    - `postman` Browser version is Error
+
+
+
 <!-- 
 if something error, dependencies has version error
 npm install express cors mongoose dotenv
