@@ -53,6 +53,10 @@ npm install react-router-dom
 npm install react-datepicker
 ```
 
+- Test form at `http://localhost:3000/create`
+  - Date much pick up before current day
+  <!-- フォームのテストで日付は必ず今日より過去の日付を指定すること -->
+
 <!-- 
 if something error, dependencies has version error
 npm install express cors mongoose dotenv
