@@ -38,7 +38,14 @@ nodemon server
 
 - Add `models` and `routes`
   - tested by `postman` using by Desktop app
-    - `postman` Browser version is Error
+    - `postman` Browser version is Error, so use Desktop app
+  - `POST` http://localhost:5000/users/add
+  - `GET` http://localhost:5000/users
+  - `POST` http://localhost:5000/exercises/add
+  - `GET` http://localhost:5000/exercises
+  - `GET` http://localhost:5000/exercises/6453ea199a3a136f6ab86ab2
+  - `POST` http://localhost:5000/exercises/update/6453ea199a3a136f6ab86ab2
+  - `DELETE` http://localhost:5000/exercises/6453ea199a3a136f6ab86ab2
 
 
 
