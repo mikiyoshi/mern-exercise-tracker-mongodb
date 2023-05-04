@@ -47,7 +47,11 @@ nodemon server
   - `POST` http://localhost:5000/exercises/update/6453ea199a3a136f6ab86ab2
   - `DELETE` http://localhost:5000/exercises/6453ea199a3a136f6ab86ab2
 
-
+```
+npm install bootstrap
+npm install react-router-dom
+npm install react-datepicker
+```
 
 <!-- 
 if something error, dependencies has version error
