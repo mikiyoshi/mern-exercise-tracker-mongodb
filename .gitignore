@@ -2,7 +2,7 @@
 
 # dependencies
 /node_modules
-backend/node_modules
+/mern-exercise-tracker/backend/node_modules
 /.pnp
 .pnp.js
 
