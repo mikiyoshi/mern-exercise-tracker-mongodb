@@ -24,3 +24,7 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 backup*
+history*
+package[0-9]*
+models
+routes
