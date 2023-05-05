@@ -8,6 +8,8 @@ export default class CreateExercise extends Component {
     super(props);
 
     this.userInput = React.createRef();
+    // https://ja.legacy.reactjs.org/docs/refs-and-the-dom.html#creating-refs
+
     this.onChangeUsername = this.onChangeUsername.bind(this);
     this.onChangeDescription = this.onChangeDescription.bind(this);
     this.onChangeDuration = this.onChangeDuration.bind(this);
@@ -94,7 +96,7 @@ export default class CreateExercise extends Component {
           <div className="form-group">
             <label>Username: </label>
             <select
-              ref={this.userInput}
+              ref={this.userInput} // https://ja.legacy.reactjs.org/docs/refs-and-the-dom.html#creating-refs
               required
               className="form-control"
               value={this.state.username}
