@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import axios from 'axios';
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 
@@ -6,6 +7,7 @@ export default class CreateExercise extends Component {
   constructor(props) {
     super(props);
 
+    this.userInput = React.createRef();
     this.onChangeUsername = this.onChangeUsername.bind(this);
     this.onChangeDescription = this.onChangeDescription.bind(this);
     this.onChangeDuration = this.onChangeDuration.bind(this);
@@ -26,6 +28,19 @@ export default class CreateExercise extends Component {
       users: ['test user'],
       username: 'test user',
     });
+    axios
+      .get('http://localhost:5000/users/')
+      .then((response) => {
+        if (response.data.length > 0) {
+          this.setState({
+            users: response.data.map((user) => user.username),
+            username: response.data[0].username,
+          });
+        }
+      })
+      .catch((error) => {
+        console.log(error);
+      });
   }
 
   onChangeUsername(e) {
@@ -64,6 +79,10 @@ export default class CreateExercise extends Component {
 
     console.log('exercise: ', exercise);
 
+    axios
+      .post('http://localhost:5000/exercises/add', exercise)
+      .then((res) => console.log('POST res.data: ', res.data));
+
     window.location = '/';
   }
 
@@ -75,7 +94,7 @@ export default class CreateExercise extends Component {
           <div className="form-group">
             <label>Username: </label>
             <select
-              ref="userInput"
+              ref={this.userInput}
               required
               className="form-control"
               value={this.state.username}
