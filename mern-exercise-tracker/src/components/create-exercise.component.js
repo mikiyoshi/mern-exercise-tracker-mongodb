@@ -26,10 +26,10 @@ export default class CreateExercise extends Component {
   }
 
   componentDidMount() {
-    this.setState({
-      users: ['test user'],
-      username: 'test user',
-    });
+    // this.setState({
+    //   users: ['test user'],
+    //   username: 'test user',
+    // });
     axios
       .get('http://localhost:5000/users/')
       .then((response) => {

@@ -18,9 +18,12 @@ npm init -y
 npm install express cors mongoose dotenv
 ```
 ~~npm install express@4.16.4 cors@2.8.5 mongoose@5.5.7 dotenv@8.0.0~~
+- server.js
+  - mongoose.connect(uri, { useNewUrlParser: true }
+    - mongoose.connect(uri, { useNewUrlParser: true, useCreateIndex: true } it's not support `useCreateIndex: true` at Mongoose 6
 
 - setting at mongoDB
-  - New Project (左上のプルダウン)
+  - New Project (left top pulldown menu)<!-- (左上のプルダウン) -->
     - Name Your Project (Project name)
     - Add Members and Set Permissions (Blank)
       - Setup
@@ -61,7 +64,14 @@ npm install react-datepicker
 npm install axios
 ```
 
-
+- Bug Report react-router-dom v6 `this.props.match.params.id` can't get class component
+  - react-router-dom v6
+    - `this.props.match.params.id` can't import parameter id `/edit/:id`, because it's a `react-router-dom v5`
+      - (How to Access URL Parameters Using React Router 6)[https://chrisvhur.medium.com/how-to-access-url-parameters-using-react-router-6-a4cf6bdad4dd]
+        - `App.js` import `useParams` and create `Wrapper` with `EditExercise`, `EditExercise` import `Wrapper`
+        - replace `componentDidMount` and `onSubmit` function from `this.props.match.params.id` to `this.props.paramsId`
+          - `this.props.paramsId` made by `Wrapper` props name
+<!-- `exercises-list.component.js` <Link> から props は送れないので、`App.js` <EditExercise> に追加すること -->
 
 <!-- 
 if something error, dependencies has version error
