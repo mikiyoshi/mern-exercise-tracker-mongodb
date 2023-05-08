@@ -26,7 +26,7 @@ function App() {
         <Routes>
           <Route path="/" exact element={<ExercisesList />} />
           {/* <Route path="/edit/:id" element={<EditExercise />} /> */}
-          {/* react-router-dom v6 では class 内でパワメーターが受け取れないので修正 */}
+          {/* react-router-dom v6 では class 内でパラメーターが受け取れないので修正 */}
           <Route path="/edit/:id" element={<Wrapper />} />
           <Route path="/create" element={<CreateExercise />} />
           <Route path="/user" element={<CreateUser />} />
